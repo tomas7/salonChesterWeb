@@ -4,17 +4,13 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout/layout"
 import SEO from "../components/SEO/seo"
 
-import Landing from '../components/Landing/landing'
-import Service from '../components/Service/service'
 import globalStyle from '../global/global.scss'
 
-const IndexPage = () => (
+const TestPage = () => (
   <Layout>
     <SEO title="Home" />
-
-    <Landing/>
-    <Service/>
+    <h1>Test Page</h1>
   </Layout>
 )
 
-export default IndexPage
+export default TestPage

@@ -5,7 +5,16 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
