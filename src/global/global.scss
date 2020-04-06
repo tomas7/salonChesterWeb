@@ -6,3 +6,18 @@ html, body {
     margin: 0;
     background-color: #FBFBFB;
 }
+
+/* reset gatsby style */ 
+.tl-edges {
+    max-width: none;
+    overflow-x: visible;
+}
+
+.ui.progress .bar {
+    transition: width 1s;
+}
+
+.ui.progress .bar>.progress {
+
+    left: 50%!important;
+}

@@ -3,6 +3,18 @@ body {
   padding: 10px 24px;
 }
 
+$_-4kScreen: 1800px;
+$_4kScreen: 2000px;
+
+@mixin for-huge-desktop-up {
+    @media (min-width: $_4kScreen) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: $_4kScreen) { @content; }
+  }
+
+
+
 h1 {
   font-weight: normal;
   font-size: 24px;
@@ -19,15 +31,17 @@ h1 {
 
   align-items: center;
   justify-content: center;
-  flex-direction: row;  
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  height: 100%;
 
+  margin-top: -100px;
+  @include for-huge-desktop-up {
+    margin-top: 50px;
+  }
+  @include for-big-desktop-up {
+    margin-top: -50px;
+  }
   /* Temp */
+  position: relative;
 
-  margin-top: 100px;
 }
 
 .group {

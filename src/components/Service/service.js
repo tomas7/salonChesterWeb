@@ -1,29 +1,81 @@
-import React from 'react'
+import React, {useState} from 'react'
 import myClass from './service.module.scss'
+import SvgPath from '../svgPath/svgPath'
+import ContentWrapper from '../../HOC/BodyWrapper/bodyWrapper';
+import img_ from '../../images/graphics/photo_icon.png'
+import iconItem from '../../images/Icons/icon.png'
+import PopUp from '../../HOC/PopUp/popUp'
 
-function service() {
+function Service(props) {
+    const [modal, Setmodal] = useState(false);
+  
+
+    let ineractiveNavigation = null
+    let styleWhite = null;
+    let myModal = null;
+
+    if(modal){
+        myModal = <PopUp hidePopUp={() => SetModal()}/>
+    }else {
+        myModal = null
+    }
+
+    if (props.pageIndx === 1) {
+        ineractiveNavigation = <SvgPath/>
+
+    }else if (props.pageIndx === 2) {
+        styleWhite = {backgroundColor: "white"};
+    }
+
+    let SetModal = () => {
+        if (!modal) {
+            Setmodal(true)
+        }else {
+            Setmodal(false)
+        }
+    }
+
+
     return (
-        <div className={myClass.serviceWrapper}>
-               <div className={myClass.test}>
+        <>
+     
+       <div className={myClass.serviceWrapper} style={styleWhite}>
+            {ineractiveNavigation}
+
+            {myModal}
+            <ContentWrapper>
+             
+                {/* This should class should be removed after I adjust size of SVG (I have to redo it in proper height/width ratio) */}
+                <div className={myClass.serviceTemp}>
+             
+                    <div className={myClass.alignLeft}>
               
-                        <svg x="0" y="0" width="100%" height="45%" viewBox="0 0 795 358" xmlns="http://www.w3.org/2000/svg" >
-                        <filter id="dropshadow" height="130%">
-                <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
-                <feOffset dx="2" dy="2" result="offsetblur"/>
-                <feComponentTransfer>
-                    <feFuncA type="linear" slope="0.5"/> 
-                </feComponentTransfer>
-                <feMerge> 
-                    <feMergeNode/> 
-                    <feMergeNode in="SourceGraphic"/> 
-                </feMerge>
-                </filter>
-                        <path   id='path' class="path" width="100%" height="100%" fill="none" fill="#FBFBFB" d="M 0 50 C 100 50 200 50 250 50 C 350 50 350 100 400 100 C 450 100 450 50 550 50 C 650 50 650 50 750 50 C 750 50 825 50 800 50 L 800 0 L 0 0 L 0 50 " stroke-dasharray="2042 300" stroke-dashoffset="2342" style={{filter:"url(#dropshadow)"}} />
-                        </svg>
-                    </div>    
-            <h1>Grooming</h1>
+                 
+                        <h1>Grooming</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur rerum quibusdam alias dolores. Ut tempora aut quis accusantium dolores nisi. Voluptates, excepturi? Aperiam, exercitationem voluptas.</p>
+                        <div class={myClass.serviceItems}>
+                            <p><img src={iconItem} alt="Blank"/><span></span><p>Service1</p></p>
+                            <p><img src={iconItem} alt="Blank"/><span></span><p>Service1</p></p>
+                            <p><img src={iconItem} alt="Blank"/><span></span><p>Service1</p></p>
+                            <p><img src={iconItem} alt="Blank"/><span></span><p>Service1</p></p>
+                        </div>
+                       
+                        <a onClick={() => SetModal()}>Leads to some CTA</a>
+                    </div>
+                
+             
+                   
+                </div>
+
+         
+            </ContentWrapper>
+            <div className={myClass.alignRight}>
+                <img src={img_} alt="Blank"/>
+            </div>
         </div>
+        </>
+    
     )
 }
 
-export default service
+export default Service

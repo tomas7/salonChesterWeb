@@ -14,7 +14,7 @@ $_4kScreen: 1800px;
     .container {
         margin: 0 auto;
         height: 100%;
-        display: grid;
+        // display: grid;
     
         .avatarWrapper  {
             margin: auto;
@@ -23,7 +23,7 @@ $_4kScreen: 1800px;
             /* Adjust - temp */ 
             position: relative;
           
-            top: 0px;
+            top:200px;
             
             @include for-big-desktop-up {
                 top:100px;

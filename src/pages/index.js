@@ -13,7 +13,8 @@ const IndexPage = () => (
     <SEO title="Home" />
 
     <Landing/>
-    <Service/>
+    <Service pageIndx={1}/>
+    {/* <Service pageIndx={2}/> */}
   </Layout>
 )
 

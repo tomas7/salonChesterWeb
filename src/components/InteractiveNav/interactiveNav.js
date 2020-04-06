@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 import myClass from './interactiveNav.scss'
 import {TweenLite, Power1, Power4, Bounce, Elastic, SteppedEase, Back} from 'gsap'
-import icon_ from '../../images/Icons/icon_.png'
+import icon_ from '../../images/Icons/icon.png'
 import randomizer from '../../Utils/RandomizePaths'
 import getRandomArbitrary from '../../Utils/RandomizeBetween'
 
