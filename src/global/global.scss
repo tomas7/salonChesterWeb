@@ -21,3 +21,47 @@ html, body {
 
     left: 50%!important;
 }
+
+
+
+/* different classes */ 
+
+.hope {
+    background-color: aquamarine;
+    color:black;
+    transition:all 1s ease-in-out;
+}
+
+.hope:hover {
+    background-color: rgb(106, 207, 173);
+    transition:all 1s ease-in-out;
+}
+
+.unSure {
+    background-color: rgb(180, 255, 118);
+    color:black;
+    transition:all 1s ease-in-out;
+}
+
+.unSure:hover {
+    background-color: rgb(146, 209, 95);
+    transition:all 1s ease-in-out;
+}
+
+.victory {
+    background-color: rgb(24, 255, 16);
+    color:black;
+    transition:all 1s ease-in-out;
+}
+
+.victory:hover {
+    background-color: rgb(18, 138, 14);
+    transition:all 1s ease-in-out;
+}
+
+/* datepicker Style */
+.react-datepicker-wrapper{
+    float: left;
+    margin-right: 25px;
+}
+

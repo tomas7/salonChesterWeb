@@ -4,18 +4,19 @@ import 'semantic-ui-css/semantic.min.css'
 import myClass from './progressBar.module.scss'
 
 export class prograssBar extends Component {
-    state = { percent: 33.333 }
-
-    increment = () =>
-    this.setState((prevState) => ({
-      percent: prevState.percent >= 100 ? 0 : prevState.percent + 33.333,
-    }))
+    
 
     render() {
+        let percentage = 33.33
+
+        if (this.props.step === 2) {
+            percentage = 66.66
+        } else if (this.props.step === 3) {
+            percentage = 100
+        }
         return (
              <div className={myClass.progressBarWrapper}>
-                <Progress value='3' total='5' progress='ratio' percent={this.state.percent} indicating />
-                <Button onClick={this.increment}>Increment</Button>
+                <Progress value={this.props.step} total='3' progress='ratio' percent={percentage} indicating />
             </div>
         )
     }

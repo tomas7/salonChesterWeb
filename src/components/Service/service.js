@@ -15,7 +15,7 @@ function Service(props) {
     let myModal = null;
 
     if(modal){
-        myModal = <PopUp hidePopUp={() => SetModal()}/>
+        myModal = <PopUp isGrooming={props.isGrooming} hidePopUp={() => SetModal()}/>
     }else {
         myModal = null
     }
@@ -51,7 +51,7 @@ function Service(props) {
                     <div className={myClass.alignLeft}>
               
                  
-                        <h1>Grooming</h1>
+                        <h1>{props.isGrooming ? "Grooming" : "Grooming Course"}</h1>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur rerum quibusdam alias dolores. Ut tempora aut quis accusantium dolores nisi. Voluptates, excepturi? Aperiam, exercitationem voluptas.</p>
                         <div class={myClass.serviceItems}>
                             <p><img src={iconItem} alt="Blank"/><span></span><p>Service1</p></p>

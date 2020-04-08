@@ -12,15 +12,15 @@
 
 .modalWrapper {
     width: 80%;
-    background-color: white;
+    max-width:1200px;
+    background-color: #FBFBFB;
     position: fixed;
     position: fixed;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    margin: 5% 0;
-    min-height: 50%;
+
+    min-height: 60%;
     max-height: 90%;
     height: auto;
     z-index: 99999999;
@@ -30,28 +30,27 @@
     align-content: center;
     flex-direction: column;
 
-    a {
+    > a {
         position: absolute;
         right: -10px;
         top: -10px;
         color: white;
     }
 
-    .textWrapper {
-        padding: 50px 75px;
-    }
+  
+}
 
-    .imageWrapper {
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
+.imageWrapper {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: -9;
+    overflow:hidden;
 
-        overflow:hidden;
+    img {
+        position: relative;
+        right: -75px;
+        bottom: -75px;
 
-        img {
-            position: relative;
-            right: -75px;
-            bottom: -75px;
-        }
     }
 }

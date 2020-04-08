@@ -1,0 +1,15 @@
+.galleryWrapper {
+    height: auto;
+
+    display: grid;
+
+    grid-template-rows: 100px auto 100%;
+
+    .textWrapper {
+        grid-row: 2/2;
+    }
+
+    .imagesWrapper {
+        grid-row: 3/3
+    }
+}
