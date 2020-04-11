@@ -87,11 +87,15 @@ let myFun =()=> {
 
     return (
         <>
+             <div className={myClass.contentWrapper}>
              <div className={myClass.textWrapper}>
                 <h1>{props.text.step1_h}</h1>
                 <p>{props.text.step1_t}</p>
+                </div>
     
             <div className={myClass.calendar}>
+            <h2>Book available date</h2>
+            <p>Use calendars to see which time we are available for you. Course can take from a one day to 3 days depending on if you choose normal or intensive course.</p>
             <div>
                 <h3>Starting date:</h3>
                 <DatePicker
@@ -135,7 +139,10 @@ let myFun =()=> {
             </div>
           
             </div>
-            {props.children}
+            <div className={myClass.buttonWrapper}>
+                {props.children}
+            </div>
+  
             </div>
 
             

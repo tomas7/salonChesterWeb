@@ -5,6 +5,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
@@ -15,6 +16,13 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+    options: {
+      offset: -100,
+
+    }
+    },    
     {
       resolve: `gatsby-source-filesystem`,
       options: {

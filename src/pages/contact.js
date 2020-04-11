@@ -9,7 +9,7 @@ import ContactContent from '../components/ContactContent/contactContent'
 
 const Contact = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="contact" />
     <ContentWrapper>
         <ContactContent/>
     </ContentWrapper>

@@ -30,11 +30,26 @@
     align-content: center;
     flex-direction: column;
 
+    -webkit-box-shadow: 0px 15px 33px -8px rgba(0,0,0,0.86);
+    -moz-box-shadow: 0px 15px 33px -8px rgba(0,0,0,0.86);
+    box-shadow: 0px 15px 33px -8px rgba(0,0,0,0.86);
+
     > a {
         position: absolute;
-        right: -10px;
-        top: -10px;
+        right: -13px;
+        top: -18px;
+        width: 30px;
+        height: 30px;
         color: white;
+
+        cursor: pointer;
+        img {
+            fill: white;
+            height: auto;
+            width: 35px;
+            background-color: #00000094;
+            padding: 6px;
+        }
     }
 
   

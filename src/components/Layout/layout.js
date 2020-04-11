@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Location } from '@reach/router';
+import Footer from './Footer/footer';
 
 import Nav from './Nav/nav'
 
@@ -24,10 +26,12 @@ const Layout = ({ children }) => {
     }
   `)
 
+
   return (
     <>
-      <Nav></Nav>
+ <Nav/>
       {children}
+    <Footer/>
     </>
   )
 }

@@ -11,7 +11,7 @@ function svgPath() {
                 <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
                 <feOffset dx="2" dy="2" result="offsetblur"/>
                 <feComponentTransfer>
-                    <feFuncA type="linear" slope="0.5"/> 
+                    <feFuncA type="linear" slope="0.25"/> 
                 </feComponentTransfer>
                 <feMerge> 
                     <feMergeNode/> 

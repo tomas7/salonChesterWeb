@@ -1,5 +1,22 @@
-.textWrapper {
+@import "../../../global/colors.scss";
+
+.contentWrapper {
     padding: 50px 75px;
+
+    height: 100%;
+    min-height: 700px;
+    justify-content: space-evenly;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+
+    p {
+      padding-right: 150px;
+    }
+
+    .textWrapper {
+
+    }
 }
 .center {
     margin: 0 auto;
@@ -62,7 +79,7 @@ form {
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
-        border:1px solid rgb(242, 255, 66);
+        border:1px solid $colorForward;
         background-color: rgba(255, 255, 255, 1);
         border-radius: 4px;
         box-sizing: border-box;
@@ -72,7 +89,7 @@ form {
       
       input[type=submit] {
         width: 100%;
-        background-color: #4CAF50;
+        background-color: $colorForward;
         color: white;
         padding: 14px 20px;
         margin: 8px 0;
@@ -82,7 +99,7 @@ form {
       }
       
       input[type=submit]:hover {
-        background-color: #45a049;
+        background-color: $colorForward;
       }
 }
 
@@ -103,7 +120,7 @@ input[type=text], select, textarea {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border:1px solid rgb(242, 255, 66);
+    border:1px solid $colorForward;
     background-color: rgba(255, 255, 255, 1);
     border-radius: 4px;
     box-sizing: border-box;
@@ -113,7 +130,7 @@ input[type=text], select, textarea {
   
   input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: $colorForward;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -123,7 +140,7 @@ input[type=text], select, textarea {
   }
   
   input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: $colorForward;
   }
   
 

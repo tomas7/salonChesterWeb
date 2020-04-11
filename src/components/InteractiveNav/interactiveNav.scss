@@ -5,12 +5,17 @@ body {
 
 $_-4kScreen: 1800px;
 $_4kScreen: 2000px;
+$_mediumScreen: 1600px;
 
 @mixin for-huge-desktop-up {
     @media (min-width: $_4kScreen) { @content; }
   }
   @mixin for-big-desktop-up {
-    @media (min-width: $_4kScreen) { @content; }
+    @media (min-width: $_-4kScreen) { @content; }
+  }
+
+  @mixin for-medium-desktop-up {
+    @media (max-width: $_mediumScreen) { @content; }
   }
 
 
@@ -32,12 +37,16 @@ h1 {
   align-items: center;
   justify-content: center;
 
-  margin-top: -100px;
+  margin-top: 75px;
   @include for-huge-desktop-up {
     margin-top: 50px;
   }
   @include for-big-desktop-up {
-    margin-top: -50px;
+    margin-top: 100px;
+  }
+
+  @include for-medium-desktop-up {
+    margin-top: 50px;
   }
   /* Temp */
   position: relative;
@@ -45,7 +54,7 @@ h1 {
 }
 
 .group {
-  width: 80%;
+  width: 85%;
   height: 150px;
   padding: 4px;  
   // background: #ddd;
@@ -63,7 +72,10 @@ z-index: 99;
   align-self: stretch;  
   
   img {
-    width: 50px;
+    width: 75px;
+    @include for-medium-desktop-up {
+      width: 50px;
+    }
   }
 
   &:nth-child(1) {

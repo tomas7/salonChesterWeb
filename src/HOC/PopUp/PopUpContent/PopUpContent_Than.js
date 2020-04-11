@@ -9,16 +9,14 @@ function PopUpContent_Than(props) {
             <div className={myClass.avatar}>
                 <img src={avatar} alt="Blank"/>
             </div>
-            <h1>Thank you!</h1>
-            <p>{props.text.step3_t}</p>
+            <div>
+                <h1>Thank you!</h1>
+                <p>{props.text.step3_t}</p>
+            </div>
 
-        <div className={myClass.calendar}>
-
-        </div>
-        <div className={myClass.buttonWrapper}>
+ 
             {props.children}
-        </div>
-
+     
         </div>
     </>
     )

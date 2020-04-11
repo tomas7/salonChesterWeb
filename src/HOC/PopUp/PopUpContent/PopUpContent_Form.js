@@ -5,7 +5,7 @@ import arrow from '../../../images/Icons/Arrow.png'
 function PopUpContent_Form(props) {
     return (
         <>
-            <div className={myClass.textWrapper}>
+            <div className={myClass.contentWrapper}>
             <div className={myClass.formColWrapperBig}>
             <h1>Fill the form</h1>
                     <form>
@@ -50,7 +50,9 @@ function PopUpContent_Form(props) {
                     <a className={myClass.socialAction} href={console.log("send")}></a><img src={arrow} alt=""/>
                 </div> */}
                 </div>
-            {props.children}
+                <div className={myClass.buttonWrapper}>
+                    {props.children}
+                </div>
             </div>
         </>
     )

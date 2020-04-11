@@ -7,7 +7,7 @@ import InteractiveNav_mk1 from '../InteractiveNav/interactiveNav_mk1'
 
 function landing() {
     return (
-        <section className={myClass.landingSec}>
+        <section id="top" className={myClass.landingSec}>
   
             
                 <div className={myClass.container}>
@@ -18,7 +18,7 @@ function landing() {
                         
                     </div>
                
-                    <InteractiveNav/>
+                    {/* <InteractiveNav/> */}
                         
                 </div>        
                  

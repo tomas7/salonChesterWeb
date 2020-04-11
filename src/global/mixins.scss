@@ -1,0 +1,11 @@
+$_4kScreen: 1800px;
+$_mediumScreen: 900px;
+
+
+@mixin for-big-desktop-up {
+    @media (min-width: $_4kScreen) { @content; }
+  }
+
+@mixin for-medium-screen {
+    @media (max-width: $_mediumScreen) { @content; }
+}

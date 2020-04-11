@@ -10,6 +10,7 @@ import GalleryContent from '../components/GalleryContent/galleryContent'
 const Gallery = () => (
   <Layout>
     <SEO title="Home" />
+
     <ContentWrapper>
         <GalleryContent/>
     </ContentWrapper>
