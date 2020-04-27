@@ -19,7 +19,7 @@ function svgPath() {
                 </feMerge>
             </filter>
             
-            <path   id='path' class="path" width="100%" height="100%" fill="none" fill="#FBFBFB" d="M 0 50 C 100 50 200 50 250 50 C 350 50 350 100 400 100 C 450 100 450 50 550 50 C 650 50 650 50 750 50 C 750 50 825 50 800 50 L 800 0 L 0 0 L 0 50 " stroke-dasharray="2042 300" stroke-dashoffset="2342" style={{filter:"url(#dropshadow)"}} />
+            <path   id='path' class="path" width="100%" height="100%" fill="none" fill="#FBFBFB" d="M0 5C200 5 200 5 250 5 350 5 350 50 400 50 450 50 450 5 550 5 650 5 650 5 750 5 750 5 825 5 800 5V0H0V50" stroke-dasharray="2042 300" stroke-dashoffset="2342" style={{filter:"url(#dropshadow)"}} />
             </svg>
         </div>    
     )

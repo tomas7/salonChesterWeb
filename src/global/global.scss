@@ -9,8 +9,14 @@ html, body {
     padding: 0;
     margin: 0;
     background-color: #FBFBFB;
+ 
 }
 
+$colorMainBlue: #4B738B;
+$colorSideBlue: #88ACBC;
+a {
+    color: $colorMainBlue;
+}
 /* reset gatsby style */ 
 .tl-edges {
     max-width: none;
@@ -30,7 +36,14 @@ html, body {
 
 p:last-child {
     margin-bottom: 16px;
+    margin-top: auto;
 }
+
+p:first-child {
+ 
+    margin-top: auto;
+}
+
 
 /* Glboal fonts */
 h1 {
@@ -85,6 +98,17 @@ button {
     background-color: darken($colorForward, 20);
     transition:all .5s ease-in-out;
 }
+.hunger {
+    background-color: #F8C813;
+    margin-right: 0px;
+    transition:all .5s ease-in-out;
+}
+
+.hunger:hover {
+    background-color: darken(#F8C813, 20);
+    transition:all .5s ease-in-out;
+}
+
 
 .unSure {
     background-color: $colorBack;
@@ -119,10 +143,15 @@ button {
 
 /* global - conditions */
 .shadow {
-    -webkit-box-shadow: 0px 15px 36px 13px rgba(0,0,0,0.36);
-    -moz-box-shadow: 0px 15px 36px 13px rgba(0,0,0,0.36);
-    box-shadow: 0px 15px 36px 13px rgba(0,0,0,0.36);
- 
+    -webkit-box-shadow: 0px 5px 26px 5px rgba(0,0,0,0.30);
+    -moz-box-shadow: 0px 5px 26px 5px rgba(0,0,0,0.30);
+    box-shadow: 0px 5px 26px 5px rgba(0,0,0,0.30);
+  }
+
+  .shadow_discreet {
+    -webkit-box-shadow: -5px 15px 26px 1px rgba(0,0,0,0.26);
+    -moz-box-shadow: -5px 15px 26px 1px rgba(0,0,0,0.26);
+    box-shadow: -5px 15px 26px 1px rgba(0,0,0,0.26);
   }
 
   /* transitions */

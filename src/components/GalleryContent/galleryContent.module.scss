@@ -3,7 +3,7 @@
 
     display: grid;
 
-    grid-template-rows: 100px auto 100%;
+    grid-template-rows: 100px auto;
 
     .textWrapper {
         grid-row: 2/2;

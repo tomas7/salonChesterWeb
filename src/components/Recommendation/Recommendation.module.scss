@@ -1,0 +1,29 @@
+.recommendationWrapper {
+    width: 50%;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 25px 30px;
+    border-radius: 20px;
+    background-color: rgb(212, 212, 212);
+    position: relative;
+    img {
+        width: 80px;
+        margin: 0 auto;
+        display: block;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translate(-50%,0px);
+    }
+    >div {
+        max-width: 200px;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

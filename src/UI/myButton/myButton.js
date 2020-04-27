@@ -5,7 +5,10 @@ function myButton(props) {
  
 
     return (
-        <button className={`${myClass.myButtonClass} ${props.addClass}`} onClick={props.onclick}>{props.text}</button>
+        <button 
+        className={`${myClass.myButtonClass} 
+        ${props.addClass}`} 
+        onClick={props.onclick}><a onClick={props.click}>{props.text}</a></button>
     )
 }
 

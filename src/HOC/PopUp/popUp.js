@@ -162,33 +162,34 @@ function PopUp(props) {
     }
 
 
-    let popUpContent =  <PopUpContetn_cal text={textObj} isGrooming={props.isGrooming}>
-                            <MyButton addClass="unSure" onclick={props.hidePopUp} text={"CLOSE"}/>
-                            <MyButton addClass="hope" onclick={() =>  transitionCal(false)} text={"NEXT"}/>
+    // let popUpContent =  <PopUpContetn_cal text={textObj} isGrooming={props.isGrooming}>
+                   
+    //                <a className="captionStyle" onclick={props.hidePopUp}>CLOSEe</a>
+    //                         <MyButton addClass="hope" onclick={() =>  transitionCal(false)} text={"NEXT"}/>
   
-                        </PopUpContetn_cal>
+    //                     </PopUpContetn_cal>
 
-    if (PB_Step === 1) {
-        popUpContent =  <PopUpContetn_cal text={textObj} isGrooming={props.isGrooming}>
-                            <MyButton addClass="unSure" onclick={() =>  transitionCal(true)} text={"PREVIOUS"}/>
-                            <MyButton addClass="hope" onclick={() => transitionFin(false)} text={"NEXT"}/>
-                        </PopUpContetn_cal>
-    }else if (PB_Step === 2) {
-        popUpContent =  <PopUpContetn_Form text={textObj} isGrooming={props.isGrooming}
-                        setfName={(e) => setfName_(e)}
-                        seteMail={(e) => seteMail_(e)}
-                        setfBreed={(e) => setfBreed_(e)}
-                        setMsg={(e) => setMsg_(e)}
-                        >
-                            <MyButton addClass="unSure" onclick={() => decreasePB_Step()} text={"PREVIOUS"}/>
-                            <MyButton addClass="hope" onclick={() => increasePB_Step()} text={"NEXT"}/>
-                        </PopUpContetn_Form>
-    }else if (PB_Step === 3) {
-        popUpContent =  <PopUpContetn_Than text={textObj}>
+    // if (PB_Step === 1) {
+    //     popUpContent =  <PopUpContetn_cal text={textObj} isGrooming={props.isGrooming}>
+    //                           <a className="captionStyle" onclick={props.hidePopUp}>CLOSEe</a>
+    //                         <MyButton addClass="hope" onclick={() => transitionFin(false)} text={"NEXT"}/>
+    //                     </PopUpContetn_cal>
+    // }else if (PB_Step === 2) {
+    //     popUpContent =  <PopUpContetn_Form text={textObj} isGrooming={props.isGrooming}
+    //                     setfName={(e) => setfName_(e)}
+    //                     seteMail={(e) => seteMail_(e)}
+    //                     setfBreed={(e) => setfBreed_(e)}
+    //                     setMsg={(e) => setMsg_(e)}
+    //                     >
+    //                         <MyButton addClass="unSure" onclick={() => decreasePB_Step()} text={"PREVIOUS"}/>
+    //                         <MyButton addClass="hope" onclick={() => increasePB_Step()} text={"NEXT"}/>
+    //                     </PopUpContetn_Form>
+    // }else if (PB_Step === 3) {
+    //     popUpContent =  <PopUpContetn_Than text={textObj}>
 
-                            <MyButton  addClass="victory solo" onclick={() => transitionFin(true)} text={"CLOSE"}/>
-                        </PopUpContetn_Than>
-    }
+    //                         <MyButton  addClass="victory solo" onclick={() => transitionFin(true)} text={"CLOSE"}/>
+    //                     </PopUpContetn_Than>
+    // }
 
 
     return (
@@ -204,6 +205,7 @@ function PopUp(props) {
             <div style={{position: "absolute"}} ref={div => el = div}>
                 <PopUpContetn_cal text={textObj} isGrooming={props.isGrooming}>
                     <MyButton addClass="unSure" onclick={props.hidePopUp} text={"CLOSE"}/>
+                    {/* <a className="captionStyle" onclick={props.hidePopUp}>CLOSE</a> */}
                     <MyButton addClass="hope" onclick={() =>  transitionCal(false)} text={"NEXT"}/>
                 </PopUpContetn_cal>
             </div>

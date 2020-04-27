@@ -29,7 +29,15 @@ const Layout = ({ children }) => {
 
   return (
     <>
- <Nav/>
+
+    {/* <Location>
+      {({ location }) => {
+        return  
+        <Nav location={location}/>
+       }}
+     </Location>
+       */}
+       <Nav/>
       {children}
     <Footer/>
     </>

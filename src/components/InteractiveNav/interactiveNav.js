@@ -170,8 +170,9 @@ function InteractiveNav() {
                   <img src={icon_} alt="Blank"/>
                 </span>
                 <span  className="box" onClick={() => swap("case2", 2)}>
-                  <h3>Icon name2</h3>
+                
                   <img src={icon_} alt="Blank"/>
+                  <h3>Icon name2</h3>
                 </span>
                 <span  className="box" onClick={() => swap("case3", 3)}>
                   <h3>Icon name3</h3>

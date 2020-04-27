@@ -49,7 +49,32 @@ function Nav(props) {
             setopen(false)
         }
     }
-   
+//     let homeLi =  <AniLink 
+//     cover  
+//     to="#home"   
+//     direction="left"
+//     duration={1}
+//     bg="
+    
+//         fixed            /* attachment */
+//         padding-box      /* origin */
+//         content-box      /* clip */
+    
+//     "bg={colorObj.colorMainBlue}>
+//         Home Ani
+// </AniLink >
+
+//     if (props.location.pathname === "/") {
+
+       
+//         homeLi =  <a 
+
+//         href="#top"
+//      >
+//             Home Ani1
+//     </a >
+
+//     }
 
     let listenToScroll = () => {
         const scrollWin = document.body.scrollTop || document.documentElement.scrollTop
@@ -72,6 +97,7 @@ function Nav(props) {
 
     return (
         <>
+       
         <nav className={navActive ? myClass.scrolled : null}>
         <div>
         <div onClick={()=>setopen(!open)} className={myClass.hamI}>
@@ -84,22 +110,22 @@ function Nav(props) {
               
                
               <li className={!open ? null : myClass.hide}> 
-                    <AniLink 
-                        cover  
-                        to="/#top"   
-                        direction="left"
-                        duration={1}
-                        bg="
-                        
-                            fixed            /* attachment */
-                            padding-box      /* origin */
-                            content-box      /* clip */
-                        
-                        "bg={colorObj.colorMainBlue}>
-                            Home
-                    </AniLink >
+              <AniLink 
+                cover  
+                to="#home"   
+                direction="left"
+                duration={1}
+                bg="
+                
+                    fixed            /* attachment */
+                    padding-box      /* origin */
+                    content-box      /* clip */
+                
+                "bg={colorObj.colorMainBlue}>
+                    Home
+            </AniLink >
 
-                </li>
+             </li>
                  
                
                 <li className={!open ? null : myClass.hide}>  <AnchorLink to="/#service">Services</AnchorLink></li>
@@ -137,7 +163,7 @@ function Nav(props) {
         </div>
      
         </nav>
-        
+        <button style={{position:"absolute", zIndex:"9999999999999999"}} onClick={console.log(props)}>afeafe</button>
         </>
     )
 }

@@ -4,6 +4,7 @@ import BodyWrapper from '../../HOC/BodyWrapper/bodyWrapper'
 import avatar from '../../images/gif/Avatar.gif'
 import InteractiveNav from '../InteractiveNav/interactiveNav'
 import InteractiveNav_mk1 from '../InteractiveNav/interactiveNav_mk1'
+import MyButton from '../../UI/myButton/myButton'
 
 function landing() {
     return (
@@ -19,9 +20,14 @@ function landing() {
                     </div>
                
                     {/* <InteractiveNav/> */}
-                        
+                    <div className={myClass.cta}>
+                        <MyButton addClass="hunger" onclick={() => console.log()} text={"BOOK A TIME"}/>
+            
+                        <p>or</p>
+                        <h2>Scroll</h2>
+                    </div>
                 </div>        
-                 
+           
         </section>
     )
 }

@@ -1,27 +1,44 @@
 @import "../../global/mixins.scss";
 
+
+
 .landingSec {
     width: 100%;
     background-color: #FBFBFB;
     width: 100%;
     height: 100vh;
+    position: relative;
+    .cta {
+        position: absolute;
+bottom: -50px;
+    z-index: 999;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+        p {
+            padding: 50px 0px;
+        }
+    }
 
     .container {
         margin: 0 auto;
         height: 100%;
         // display: grid;
-    
+        display: flex;
+
+        flex-direction: column;
         .avatarWrapper  {
             margin: auto;
             text-align: center;
-            
+            padding-bottom: 25px;
             /* Adjust - temp */ 
             position: relative;
           
-            top:200px;
+     
             
             @include for-big-desktop-up {
-                top:100px;
+                // top:100px;
             }
 
             /* ---End--- */

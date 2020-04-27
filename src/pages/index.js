@@ -8,6 +8,8 @@ import Landing from '../components/Landing/landing'
 import Service from '../components/Service/service'
 import globalStyle from '../global/global.scss'
 
+import Recommendation from '../components/Recommendation/Recommendation'
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
@@ -15,6 +17,7 @@ const IndexPage = () => (
     <Landing/>
     <Service pageIndx={1} isGrooming={true}/>
     <Service pageIndx={2} isGrooming={false}/>
+    <Recommendation/>
   </Layout>
 )
 
