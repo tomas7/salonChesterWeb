@@ -1,0 +1,48 @@
+.mainImg {
+    position: relative;
+    // left: 50px;
+    // top: 50px;
+    margin: 50px 150px;
+    max-width: 75%;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+ 
+    svg:nth-child(2) {
+      position: absolute;
+      right: 0px;
+      z-index: 2;
+
+   opacity: 0.8;
+   transform: scale(1.2)
+    }
+  
+    svg:nth-child(3) {
+      position: absolute;
+      right: 0px;
+
+  opacity: 0.8;
+
+  }
+
+.large {
+
+    :nth-child(2) {
+      position: absolute;
+      right: 0px;
+      z-index: 2;
+  
+   opacity: 0.8;
+   transform: scale(1.7)!important;
+  
+    }
+    :nth-child(3) {
+      position: absolute;
+      right: 0px;
+    
+  opacity: 0.8;
+  width: 100%;
+    }
+    
+  }

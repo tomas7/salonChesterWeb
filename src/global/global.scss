@@ -44,6 +44,10 @@ p:first-child {
     margin-top: auto;
 }
 
+svg:not(:root) {
+    overflow:visible!important;
+}
+
 
 /* Glboal fonts */
 h1 {

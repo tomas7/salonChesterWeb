@@ -34,10 +34,14 @@
     -moz-box-shadow: 0px 15px 33px -8px rgba(0,0,0,0.86);
     box-shadow: 0px 15px 33px -8px rgba(0,0,0,0.86);
 
+    overflow: hidden;
+
     > a {
         position: absolute;
-        right: -13px;
-        top: -18px;
+        // right: -13px;
+        // top: -18px;
+        right: 11px;
+        top: 5px;
         width: 30px;
         height: 30px;
         color: white;
@@ -56,16 +60,32 @@
 }
 
 .imageWrapper {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
+
+    bottom: 50px;
+    right: 50px;
     z-index: -9;
-    overflow:hidden;
+    // >div {
+    //     position: absolute;
+    //     // right: -75px;
+    //     // bottom: -75px;
+    //     right: 0px;
+    //     bottom: 0px;
+    //     margin: 50px;
+      
+    //     // z-index: -2;
+    //     max-width: 75%;
+    // }
 
     img {
-        position: relative;
-        right: -75px;
-        bottom: -75px;
-
+             position: absolute;
+        // right: -75px;
+        // bottom: -75px;
+        right: 0px;
+        bottom: 0px;
+        margin: 50px;
+        max-width: 400px;
+        // z-index: -2;
+        max-height: 50%;
+   
     }
 }

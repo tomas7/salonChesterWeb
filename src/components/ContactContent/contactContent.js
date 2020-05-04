@@ -1,6 +1,6 @@
 import React from 'react'
 import myClass from './contactContent.module.scss'
-import bgImage from '../../images/graphics/photo_icon.png'
+import bgImage from '../../images/graphics/Contact.png'
 
 function ContactContent() {
     return (
