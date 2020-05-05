@@ -4,7 +4,7 @@ import myClass from './RecommendationDot.module.scss'
 function RecommendationDot(props) {
     let activeStyle = null
     if (props.active === props.idx) {
-        activeStyle = "black"
+        activeStyle = "#4B738B"
     }
 
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import myClass from './PopUpContent.module.scss'
-import avatar from '../../../images/gif/Avatar.gif'
+import avatar from '../../../images/gif/n_wiggle.gif'
 
 function PopUpContent_Than(props) {
     return (
