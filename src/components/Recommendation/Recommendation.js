@@ -64,6 +64,7 @@ function Recommendation() {
         console.log(element)
         dot = 
         <Dot 
+        key={idx}
         select={(idx) => select(idx)}
         active={active}
         idx={objArr[idx].idx}

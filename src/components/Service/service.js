@@ -54,7 +54,7 @@ function Service(props) {
     if (props.pageIndx === 1) {
         ineractiveNavigation = <SvgPath/>
         icons =   
-        <div class={myClass.serviceItems}>
+        <div className={myClass.serviceItems}>
             <h2>Our services:</h2>
             <div >
                 <span>
@@ -134,6 +134,7 @@ function Service(props) {
               isGrooming={props.isGrooming}
               boubleSVGTransform={props.boubleSVGTransform}
               wiggle={true}
+              opacity="unset"
               />
               
             </div>

@@ -4,74 +4,64 @@ import BodyWrapper from '../../HOC/BodyWrapper/bodyWrapper'
 import avatarC from '../../images/gif/n_cloudy.gif'
 import avatarS from '../../images/gif/n_sun.gif'
 import avatarR from '../../images/gif/n_rain.gif'
+import avatarN from '../../images/gif/n_night.gif'
+import avatarD from '../../images/gif/n_default.gif'
 import InteractiveNav from '../InteractiveNav/interactiveNav'
 import InteractiveNav_mk1 from '../InteractiveNav/interactiveNav_mk1'
 import MyButton from '../../UI/myButton/myButton'
 import Axios from 'axios'
+import scrollI from '../../images/Icons/Asset 37-80.jpg'
+
+import unixConverter from '../../Utils/unixToDate'
 
 function Landing() {
     const [response, setresponse] = useState(null)
-    const [sunset, setsunset] = useState(null)
-    const [sunrise, setsunrise] = useState(null)
+    // const [sunset, setsunset] = useState(null)
+    // const [sunrise, setsunrise] = useState(null)
     const [day, setday] = useState(false)
-    let weatherResponse;
+
     let apiKey = "f38c60d22d169c8e99de854f1b63ddb2"
 
-    let testFun = (unix) => {
-        let unix_timestamp = unix
-        // Create a new JavaScript Date object based on the timestamp
-        // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-        var date = new Date(unix_timestamp * 1000);
-        // Hours part from the timestamp
-        var hours = date.getHours();
-        // Minutes part from the timestamp
-        var minutes = "0" + date.getMinutes();
-        // Seconds part from the timestamp
-        var seconds = "0" + date.getSeconds();
-        
-        var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-        var testDate = new Date(formattedTime)
-        console.log(typeof(testDate))
-        console.log(testDate)
-        return formattedTime
-    }
-
-    var curTime = new Date()
-
-    var curHours = curTime.getHours()
-    var curMinutes = curTime.getMinutes()
-
-    var formatedCurTiem = `${curHours}:${curMinutes}`
-
     useEffect(() => {
+        //GET current time (date)
         var curTime = new Date()
-
+        // fx. 8
         var curHours = curTime.getHours()
         var curMinutes = curTime.getMinutes()
-    
         var formatedCurTime = `${curHours}:${curMinutes}`
 
+ 
         console.log("useEffect first")
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=49.21&lon=19.3&appid=f38c60d22d169c8e99de854f1b63ddb2&units=metric`)
+        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=49.21&lon=19.3&appid=${apiKey}&units=metric`)
         .then(res => {
             console.log(res)
           const persons = res.data.weather[0].main;
         const sunset = res.data.sys.sunset
         const sunrise = res.data.sys.sunrise
-        let convertedSunset = testFun(sunset)
-        let convertedSunrise = testFun(sunrise)
-          setresponse( persons );
-           setsunset( convertedSunset );
-        //   setsunrise( convertedSunrise );
-     
+        //fx. 20
+        let convertedSunset = unixConverter(sunset)
+        //fx. 6
+        let convertedSunrise = unixConverter(sunrise)
 
+        //do we have a day or night
+        if (curHours >= convertedSunrise && curHours <= convertedSunset) {
+            setday(true)
+        }else {
+            setday(false)
+        }
+
+         setresponse( persons );
+         //IN case we need it to save as state for a future. For example if we want to check for it more frequently
+         //  setsunset( convertedSunset );
+         //   setsunrise( convertedSunrise );
         })
       
     }, [])
 
+    //check if we should update state
     useEffect(() => {
         console.log("useEffect again")
-        console.log(typeof(sunset))
+        console.log(day)
         // console.log(sunrise)
         Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=49.21&lon=19.3&appid=f38c60d22d169c8e99de854f1b63ddb2&units=metric`)
         .then(res => {
@@ -86,29 +76,30 @@ function Landing() {
         
                 setresponse( fullRes );
             }
+        } 
+    })
+    })
+
+    let avatar_ = avatarD
+
+    if (day) {
+        switch (response) {
+            case "Clouds":
+            avatar_ = avatarC
+                break;
+            case "Rain":
+            avatar_ = avatarR
+                break;
+            case "Clear":
+            avatar_ = avatarS
+                break;
+            
+            default:
+            avatar_ = avatarD
+                break;
         }
-      
-    })
-       
-      
-    })
-
-    let avatar_ = null
-
-    switch (response) {
-        case "Clouds":
-        avatar_ = avatarC
-            break;
-        case "Rain":
-        avatar_ = avatarR
-            break;
-        case "Clear":
-        avatar_ = avatarS
-            break;
-        
-        default:
-        avatar_ = avatarS
-            break;
+    }else {
+        avatar_ = avatarN
     }
    
 
@@ -121,17 +112,12 @@ function Landing() {
                         <img src={avatar_} alt="Blank"/>
                          <h1>Welcome to Salon Chester</h1>
                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam cum vero non, numquam maiores delectus.</p>
-                        <p>{`weather is : ${response}`}</p>
-                      
                     </div>
-               
-               
                     {/* <InteractiveNav/> */}
                     <div className={myClass.cta}>
-                        <MyButton addClass="hunger" onclick={() => console.log()} text={"BOOK A TIME"}/>
-                        <button onClick={() => testFun()}>d</button>
+                        <MyButton addClass="hunger" onclick={() => console.log()} text={"BOOK A TIME"}/>                 
                         <p>or</p>
-                        <h2>Scroll</h2>
+                        <img src={scrollI} alt="Blank"/>
                     </div>
                 </div>        
            
