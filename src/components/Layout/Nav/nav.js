@@ -131,7 +131,7 @@ function Nav(props) {
                 <li className={!open ? null : myClass.hide}>  <AnchorLink to="/#service">Services</AnchorLink></li>
                 <li className={open ? null : myClass.hide} className={navActive ? null : myClass.center}>
                 <div style={navActive ? {left: "5px"} : {left: "0px"}} className={myClass.navLogoWrapper}>
-                <AnchorLink to="/#top">
+                <AnchorLink to="#top">
                     <img className={navActive ? myClass.iconActive : null} src={logo_icon} alt="Blank"/>    
                     <img className={navActive ? myClass.textActive : null} src={logo_text} alt="Blank"/>
                 </AnchorLink> 

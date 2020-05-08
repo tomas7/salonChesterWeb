@@ -23,6 +23,8 @@ import iconItem5 from '../../images/Icons/i_5.png'
 import iconItem6 from '../../images/Icons/i.png'
 import PopUp from '../../HOC/PopUp/popUp'
 
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 import groomingImg from '../../images/graphics/GroomingM.png'
 import coursesImg from '../../images/graphics/CourseM.png'
 import { TweenMax } from 'gsap/gsap-core';
@@ -34,7 +36,12 @@ import Boubles from '../../components/Boubles/boubles'
 function Service(props) {
     const [modal, Setmodal] = useState(false);
 
-  
+    useEffect(() => {
+        
+        return () => {
+            clearAllBodyScrollLocks()
+        }
+    }, [])
 
     let ineractiveNavigation = null;
     let icons = null;
@@ -43,7 +50,8 @@ function Service(props) {
     let myModal = null;
     let modalButtonText = "BOOK A TIME"
 
-
+    //using ref from another component
+    const backdrop = useRef(null)
 
     if(modal){
         myModal = <PopUp isGrooming={props.isGrooming} hidePopUp={() => SetModal()}/>
@@ -92,8 +100,12 @@ function Service(props) {
 
     let SetModal = () => {
         if (!modal) {
+            //disable except targeted element
+            disableBodyScroll(backdrop);
             Setmodal(true)
         }else {
+            //enabled except targeted element
+            enableBodyScroll(backdrop);
             Setmodal(false)
         }
     }
@@ -135,6 +147,8 @@ function Service(props) {
               boubleSVGTransform={props.boubleSVGTransform}
               wiggle={true}
               opacity="unset"
+
+              openModal={() => SetModal()}
               />
               
             </div>

@@ -113,12 +113,19 @@ function Boubles(props) {
 
     return (
         <>
-            <img className={myClass.mainImg}onMouseEnter={()=> 
+            <img className={myClass.mainImg} 
+                style={{  maxWidth: props.maxWidth,
+                    maxHeight: props.maxHeight   }}
+                onMouseEnter={()=> 
                 onHover(svg1)} onMouseLeave={()=> 
-                ofHover(svg1)} src={props.flatImg} ref={img => imgMain = img} alt="Blank"/>
+                ofHover(svg1)} src={props.flatImg} ref={img => imgMain = img} alt="Blank"
+                onClick={props.openModal}
+                />
+                
+
             <svg style={{transform: `scale(${props.scale + 1})`, 
                         opacity: props.opacity,
-                                   
+                        minWidth: props.minWidth         
                     }}
                  ref={svg => svg1 = svg} 
                 id="Layer_18" 
@@ -134,7 +141,7 @@ function Boubles(props) {
             </svg>
             <svg style={{transform: `scale(${props.scale + .5})`, 
                         opacity: props.opacity + .1,
-                                         
+                        minWidth: props.minWidth      
                     }} ref={svg => svg2 = svg} 
                 id="Layer_19" 
                 data-name="Layer 18" 

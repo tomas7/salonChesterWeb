@@ -11,6 +11,7 @@ import globalStyle from '../global/global.scss'
 import flatImgG from '../images/graphics/GroomingM.png'
 import flatImgGZ from '../images/graphics/GroomingZ.png'
 import flatImgC from '../images/graphics/CourseM.png'
+import flatImgC_1 from '../images/graphics/Course_1.png'
 
 import Recommendation from '../components/Recommendation/Recommendation'
 
@@ -31,7 +32,7 @@ const IndexPage = () => (
     <Service 
       pageIndx={2} 
       isGrooming={false}
-      flatImg={flatImgC}
+      flatImg={flatImgC_1}
       bouble1c="#F29F8D"
       bouble2c="#F27D72"
       boubleSVG="M669.82,618.77c-10.9,76.5-59.73,100.48-112.92,95.68s-115-44-167.79-43.59S251.29,656.25,216,609.49c-25.65-34-32.26-67.25-2.18-119.56s24.85-121.7,10-209.3,64.09-143.4,115.1-149.5S486.27,125,498.92,193,512,343,569.54,414.94,680.72,542.26,669.82,618.77Z"

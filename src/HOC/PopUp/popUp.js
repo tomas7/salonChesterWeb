@@ -16,8 +16,10 @@ import { TimelineLite, Power1, Power4, TweenLite } from 'gsap/all';
 import Boubles from '../../components/Boubles/boubles'
 
 import i_g1 from '../../images/graphics/GroomingForm1.png'
+import i_g2_grad_sleeping from '../../images/graphics/Grad_sleeping_1.png'
 import i_g2 from '../../images/graphics/GroomingForm2.png'
 import i_c1 from '../../images/graphics/CoursesForm1.png'
+import i_c1_pen from '../../images/graphics/Pen_1.png'
 import i_c2 from '../../images/graphics/CoursesForm2.png'
 
 
@@ -65,7 +67,7 @@ function PopUp(props) {
     let postSVGTransfomr = "translate(46.84 -332.27)"
 
     let gradSleepingSVG = "M631.45,360.26c-1.47,25.87-33.84,72.41-46,93.5s-15.09,58.44-30,95.35S504,595.24,476.9,597s-108.21-3.51-149.23,21.53-71.9,24.61-105.29,20.21S176.24,610,176.24,610c-25-43.43-29.88-78.28-3.51-157.37s56.46-97.54,99.74-118.19,88.31-83,105.23-96,42.4-15.37,58.44-7,43.94,18,88.32,28.34,78.43,39.11,88.75,51S632.91,334.4,631.45,360.26Z"
-    let gradSleepingSVGTransfomr = "translate(55.08 -226.57)"
+    let gradSleepingSVGTransfomr = "translate(55.08 -256.57)"
 
     const [PB_Step, setPB_Step] = useState(1)
     const [fName, setfName] = useState(null)
@@ -86,6 +88,9 @@ function PopUp(props) {
                 wiggle={false}
                 scale={0.8}
                 opacity={0.2}
+                minWidth="1000"
+                maxWidth="600px"
+                maxHeight="50%"
                 />
             </div>
 
@@ -99,6 +104,9 @@ function PopUp(props) {
                 wiggle={false}
                 scale={0.8}
                 opacity={0.2}
+                minWidth="1000"
+                maxWidth="unset"
+                maxHeight="80%"
                 />
             </div>
       
@@ -106,7 +114,7 @@ function PopUp(props) {
     }else {
         i_g = <>
            <div ref={div => img_g1 = div}>
-                <Boubles flatImg={i_g1}
+                <Boubles flatImg={i_c1_pen}
                 bouble1c="#F29F8D"
                 bouble2c="#F27D72"
                 boubleSVG={postSVG}
@@ -115,12 +123,14 @@ function PopUp(props) {
                 wiggle={false}
                 scale={0.8}
                 opacity={0.1}
-                minWidth="2000"
+                minWidth="1000"
+                maxWidth="600px"
+                maxHeight="60%"
                 />
             </div>
 
             <div ref={div => img_g2 = div}>
-                <Boubles flatImg={i_c2}
+                <Boubles flatImg={i_g2_grad_sleeping}
                 bouble1c="#F29F8D"
                 bouble2c="#F27D72"
                 boubleSVG={gradSleepingSVG}
@@ -129,7 +139,9 @@ function PopUp(props) {
                 wiggle={false}
                 scale={0.8}
                 opacity={0.1}
-                minWidth="2000"
+                minWidth="1800"
+                   maxWidth="unset"
+                   maxHeight="70%"
                 />
             </div>
  

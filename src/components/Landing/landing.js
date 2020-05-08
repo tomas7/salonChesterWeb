@@ -11,8 +11,12 @@ import InteractiveNav_mk1 from '../InteractiveNav/interactiveNav_mk1'
 import MyButton from '../../UI/myButton/myButton'
 import Axios from 'axios'
 import scrollI from '../../images/Icons/Asset 37-80.jpg'
-
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "gatsby"
 import unixConverter from '../../Utils/unixToDate'
+const scrollToElement = require('scroll-to-element')
+
+
 
 function Landing() {
     const [response, setresponse] = useState(null)
@@ -80,6 +84,23 @@ function Landing() {
     })
     })
 
+    const handleLinkClick = (e, target) => {
+    
+        // NODE-SAFE CODE
+        // Gatsby uses Node to generate our pages. 
+        // Node doesn't know what a window is. 
+        // Be sure to wrap any of your browser interactions
+        // in some sort of node-safe if statement like this:
+        
+     
+            if (e) e.preventDefault()
+            scrollToElement(target, {
+              offset: -50, // Offset a fixed header if you please
+              duration: 1000,
+            })
+          }
+       
+
     let avatar_ = avatarD
 
     if (day) {
@@ -117,7 +138,11 @@ function Landing() {
                     <div className={myClass.cta}>
                         <MyButton addClass="hunger" onclick={() => console.log()} text={"BOOK A TIME"}/>                 
                         <p>or</p>
-                        <img src={scrollI} alt="Blank"/>
+                        <Link 
+                         onClick={e => handleLinkClick(e, '#service')}
+                     
+                         to="/#service"><img src={scrollI} alt="Blank"/></Link>
+                        
                     </div>
                 </div>        
            
