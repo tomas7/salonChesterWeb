@@ -69,6 +69,9 @@ function PopUp(props) {
     let gradSleepingSVG = "M631.45,360.26c-1.47,25.87-33.84,72.41-46,93.5s-15.09,58.44-30,95.35S504,595.24,476.9,597s-108.21-3.51-149.23,21.53-71.9,24.61-105.29,20.21S176.24,610,176.24,610c-25-43.43-29.88-78.28-3.51-157.37s56.46-97.54,99.74-118.19,88.31-83,105.23-96,42.4-15.37,58.44-7,43.94,18,88.32,28.34,78.43,39.11,88.75,51S632.91,334.4,631.45,360.26Z"
     let gradSleepingSVGTransfomr = "translate(55.08 -256.57)"
 
+    let penSVG = "M691,422.26C629.71,486.36,517.71,540.17,490.58,580s-85.07,101.93-216,66.94S84.16,515.67,69.72,411.33s52.5-190.09,77-213.28c0,0,56.77-58.62,143.88-55.12s164.24,66.93,252.11,68.68,142.12-19.68,166.62,28S752.2,358.17,691,422.26Z"
+    let penTransfomr = "translate(-65.2 -190.28)"
+
     const [PB_Step, setPB_Step] = useState(1)
     const [fName, setfName] = useState(null)
     const [eMail, seteMail] = useState(null)
@@ -91,6 +94,7 @@ function PopUp(props) {
                 minWidth="1000"
                 maxWidth="600px"
                 maxHeight="50%"
+                isPopUp={true}
                 />
             </div>
 
@@ -107,6 +111,7 @@ function PopUp(props) {
                 minWidth="1000"
                 maxWidth="unset"
                 maxHeight="80%"
+                isPopUp={true}
                 />
             </div>
       
@@ -117,15 +122,16 @@ function PopUp(props) {
                 <Boubles flatImg={i_c1_pen}
                 bouble1c="#F29F8D"
                 bouble2c="#F27D72"
-                boubleSVG={postSVG}
+                boubleSVG={penSVG}
                 // isGrooming={props.isGrooming}
-                boubleSVGTransform={postSVGTransfomr}
+                boubleSVGTransform={penTransfomr}
                 wiggle={false}
                 scale={0.8}
                 opacity={0.1}
                 minWidth="1000"
                 maxWidth="600px"
                 maxHeight="60%"
+                isPopUp={true}
                 />
             </div>
 
@@ -142,6 +148,7 @@ function PopUp(props) {
                 minWidth="1800"
                    maxWidth="unset"
                    maxHeight="70%"
+                   isPopUp={true}
                 />
             </div>
  

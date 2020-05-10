@@ -1,4 +1,5 @@
 $_4kScreen: 1800px;
+$_bigScreen: 1600px;
 $_mediumScreen: 900px;
 
 
@@ -8,4 +9,8 @@ $_mediumScreen: 900px;
 
 @mixin for-medium-screen {
     @media (max-width: $_mediumScreen) { @content; }
+}
+
+@mixin for-big-screen {
+  @media (max-width: $_bigScreen) { @content; }
 }

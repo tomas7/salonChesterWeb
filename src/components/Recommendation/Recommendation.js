@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect} from 'react'
 import {TimelineLite,TimelineMax, Power1} from "gsap/all"
 import myClass from './Recommendation.module.scss'
-import recI from '../../images/Icons/recommendation.png'
+import recI from '../../images/Icons/star_1.png'
 import Dot from './RecommendationDot/RecommendationDot'
 
 function Recommendation() {

@@ -21,6 +21,7 @@ import iconItem3 from '../../images/Icons/i_3.png'
 import iconItem4 from '../../images/Icons/i_4.png'
 import iconItem5 from '../../images/Icons/i_5.png'
 import iconItem6 from '../../images/Icons/i.png'
+import items from '../../images/Icons/items.png'
 import PopUp from '../../HOC/PopUp/popUp'
 
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
@@ -89,12 +90,16 @@ function Service(props) {
                     <img src={iconItem1} alt="Blank"/>
                     <p>Bath</p>
                 </span>
+                <span>
+                    <img src={items} alt="Blank"/>
+                    <p>Accessories</p>
+                </span>
             </div>
         
         </div>
 
     }else if (props.pageIndx === 2) {
-        styleWhite = {backgroundColor: "white"};
+        styleWhite = {backgroundColor: "#F1E3EB"};
         modalButtonText = "BOOK A DATE"
     }
 

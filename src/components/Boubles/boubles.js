@@ -48,6 +48,31 @@ function Boubles(props) {
                 .to(svg2, AnimDur, {autoAlpha: .2,scale: 0.975, ease: Power1.easeInOut,  yoyo:true }, )
                 .to(svg2, AnimDur, { autoAlpha: .3,scale: 1.0,ease: Power1.easeInOut,  yoyo:true }, )
                 .play(3)
+            }else if (props.isContact) {
+                mainImg_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
+                .to(imgMain, AnimDur, {scale:1 ,ease: Power1.easeInOut,  yoyo:true })
+                .to(imgMain, AnimDur, {scale:1.03 ,ease: Power1.easeInOut,  yoyo:true })
+                .to(imgMain, AnimDur, {scale:1.06 , ease: Power1.easeInOut,  yoyo:true })
+                .to(imgMain, AnimDur, {scale:1.03 ,ease: Power1.easeInOut,  yoyo:true })
+                .to(imgMain, AnimDur, {scale:1. ,ease: Power1.easeInOut,  yoyo:true })
+                .play()
+                svg1_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true,  })
+                .set(svg1, {css: {scale: 0.81}})
+                .to(svg1, AnimDur, {scale:0.81 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:0.82 ,autoAlpha: .3,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:0.83 ,autoAlpha: .4,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:0.82 ,autoAlpha: .5,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:0.81 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .play(1)
+                svg2_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
+                .set(svg2, {css: {scale: 0.9025}})
+              
+                .to(svg2, AnimDur, {scale:0.9025 ,autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:0.905 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:0.9072 ,autoAlpha: .3, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:0.905 ,autoAlpha: .1, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:0.9025 , autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .play(2)
             }else {
                 mainImg_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
                 .to(imgMain, AnimDur, {scale:1 ,ease: Power1.easeInOut,  yoyo:true })
@@ -57,20 +82,20 @@ function Boubles(props) {
                 .to(imgMain, AnimDur, {scale:1. ,ease: Power1.easeInOut,  yoyo:true })
                 .play()
                 svg1_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true,  })
-                .to(svg1, AnimDur, {scale:1.7 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:1.725 ,autoAlpha: .3,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:1.75 ,autoAlpha: .4,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:1.725 ,autoAlpha: .5,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:1.7 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.025 ,autoAlpha: .3,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.05 ,autoAlpha: .4,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.025 ,autoAlpha: .5,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
                 .play(1)
                 svg2_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
-                .set(svg2, {css: {opacity: 0, scale: 1.4}})
+                .set(svg2, {css: {scale: 1.4}})
               
-                .to(svg2, AnimDur, {scale:1.4 ,autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:1.425 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:1.45 ,autoAlpha: .3, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:1.425 ,autoAlpha: .1, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:1.4 , autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.24 ,autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.225 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.25 ,autoAlpha: .3, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.225 ,autoAlpha: .1, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.2 , autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
                 .play(2)
             }
         }
@@ -123,7 +148,9 @@ function Boubles(props) {
                 />
                 
 
-            <svg style={{transform: `scale(${props.scale + 1})`, 
+            {/* <svg style={{transform: `scale(${props.scale + .6})`,  */}
+            <svg style={{ 
+                 transform:    props.isPopUp ? `scale(${props.scale + 1})` : "unset",
                         opacity: props.opacity,
                         minWidth: props.minWidth         
                     }}
@@ -139,7 +166,12 @@ function Boubles(props) {
                     d={props.boubleSVG} 
                     transform={props.boubleSVGTransform}/>
             </svg>
-            <svg style={{transform: `scale(${props.scale + .5})`, 
+            {/* <svg style={{transform: `scale(${props.scale + .2})`,  */}
+                 <svg
+                
+                 style={{ 
+                 
+                    transform:    props.isPopUp ? `scale(${props.scale + .5})` : "unset",
                         opacity: props.opacity + .1,
                         minWidth: props.minWidth      
                     }} ref={svg => svg2 = svg} 
