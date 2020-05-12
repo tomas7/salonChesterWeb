@@ -1,12 +1,13 @@
     import React, {useEffect, useState} from 'react'
 import myClass from './landing.module.scss'
 import BodyWrapper from '../../HOC/BodyWrapper/bodyWrapper'
-import avatarC from '../../images/gif/avatar_cloudy.gif'
-import avatarC_f from '../../images/gif/avatar_night.gif'
-import avatarS from '../../images/gif/avatar_sun.gif'
-import avatarR from '../../images/gif/avatar_rain.gif'
-import avatarN from '../../images/gif/avatar_night.gif'
-import avatarD from '../../images/gif/avatar_default.gif'
+// import avatarC from '../../images/gif/avatar_cloudy.gif'
+// import avatarC_f from '../../images/gif/avatar_night.gif'
+ import avatarS from '../../images/gif/avatar_sun.gif'
+// import avatarR from '../../images/gif/avatar_rain.gif'
+// import avatarN from '../../images/gif/avatar_night.gif'
+// import avatarD from '../../images/gif/avatar_default.gif'
+import avatarLow from '../../images/gif/Sequence 01.mp4'
 import InteractiveNav from '../InteractiveNav/interactiveNav'
 import InteractiveNav_mk1 from '../InteractiveNav/interactiveNav_mk1'
 import MyButton from '../../UI/myButton/myButton'
@@ -15,6 +16,7 @@ import scrollI from '../../images/Icons/Asset 37-80.jpg'
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { Link } from "gatsby"
 import unixConverter from '../../Utils/unixToDate'
+import Image from './landingImg'
 const scrollToElement = require('scroll-to-element')
 
 
@@ -24,8 +26,15 @@ function Landing() {
     // const [sunset, setsunset] = useState(null)
     // const [sunrise, setsunrise] = useState(null)
     const [day, setday] = useState(false)
+    const [temp, settemp] = useState(null)
 
     let apiKey = "f38c60d22d169c8e99de854f1b63ddb2"
+    
+    let latAal = 57.0488;
+    let lonAal = 9.9217;
+
+    let latDk = 49.21;
+    let lonDk = 19.3;
 
     useEffect(() => {
         //GET current time (date)
@@ -34,10 +43,9 @@ function Landing() {
         var curHours = curTime.getHours()
         var curMinutes = curTime.getMinutes()
         var formatedCurTime = `${curHours}:${curMinutes}`
-
  
         console.log("useEffect first")
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=49.21&lon=19.3&appid=${apiKey}&units=metric`)
+        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latAal}&lon=${lonAal}&appid=${apiKey}&units=metric`)
         .then(res => {
             console.log(res)
           const persons = res.data.weather[0].main;
@@ -54,7 +62,7 @@ function Landing() {
         }else {
             setday(false)
         }
-
+        settemp (res.data.weather[0].temp);
          setresponse( persons );
          //IN case we need it to save as state for a future. For example if we want to check for it more frequently
          //  setsunset( convertedSunset );
@@ -66,24 +74,25 @@ function Landing() {
     //check if we should update state
     useEffect(() => {
         console.log("useEffect again")
-        console.log(day)
+
         // console.log(sunrise)
-        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=49.21&lon=19.3&appid=f38c60d22d169c8e99de854f1b63ddb2&units=metric`)
+        Axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latAal}&lon=${lonAal}&appid=${apiKey}&units=metric`)
         .then(res => {
           const fullRes = res.data;
+        console.log(fullRes)
         if (response === null || response === undefined) {
             return
         }else {
             if (response === fullRes.weather[0].main) {
-              
+                console.log("we have the same value")
                 return;
             }else {
-        
-                setresponse( fullRes );
+                
+                setresponse( fullRes.weather[0].main );
             }
         } 
     })
-    })
+    }, [response])
 
     const handleLinkClick = (e, target) => {
     
@@ -102,27 +111,32 @@ function Landing() {
           }
        
 
-    let avatar_ = avatarD
+    // let avatar_ = avatarD
 
-    if (day) {
-        switch (response) {
-            case "Clouds":
-            avatar_ = avatarC
-                break;
-            case "Rain":
-            avatar_ = avatarR
-                break;
-            case "Clear":
-            avatar_ = avatarS
-                break;
+    // if (day) {
+    //     switch (response) {
+    //         case "Clouds":
+    //         avatar_ = avatarC
+    //             break;
+    //         case "Rain":
+    //         avatar_ = avatarR
+    //             break;
+    //         case "Clear":
+    //         if (temp > 15) {
+    //             avatar_ = avatarS
+    //         }else {
+    //             avatar_ = avatarD
+    //         }
             
-            default:
-            avatar_ = avatarD
-                break;
-        }
-    }else {
-        avatar_ = avatarN
-    }
+    //             break;
+            
+    //         default:
+    //         avatar_ = avatarD
+    //             break;
+    //     }
+    // }else {
+    //     avatar_ = avatarN
+    // }
    
 
     return (
@@ -131,7 +145,12 @@ function Landing() {
             
                 <div className={myClass.container}>
                     <div className={myClass.avatarWrapper}>
-                        <img src={avatar_} alt="Blank"/>
+                    {/* <video  loop autoPlay muted
+                        src={avatarLow}
+                      >
+                    </video>
+                    */}
+                        {/* <img src={avatar_} alt="Blank"/> */}
                          <h1>Welcome to Salon Chester</h1>
                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam cum vero non, numquam maiores delectus.</p>
                     </div>
@@ -142,7 +161,11 @@ function Landing() {
                         <Link 
                          onClick={e => handleLinkClick(e, '#service')}
                      
-                         to="/#service"><img src={scrollI} alt="Blank"/></Link>
+                         to="/#service">
+                        
+                         <Image alt="Blank"/>
+                        
+                         </Link>
                         
                     </div>
                 </div>        

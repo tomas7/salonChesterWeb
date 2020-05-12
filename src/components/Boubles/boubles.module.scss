@@ -2,12 +2,16 @@
     position: relative;
     // left: 50px;
     // top: 50px;
-    margin: 50px 150px;
-    max-width: 75%;
+width: 600px;
     z-index: 3;
     cursor: pointer;
   }
-
+.posAbs {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  
+}
  
     svg:nth-child(2) {
       position: absolute;

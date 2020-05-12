@@ -23,7 +23,7 @@
         justify-self: end;
         width: 100%;
         height: 100%;
-
+        z-index: 2;
   
         iframe {
             width: 100%;
@@ -33,7 +33,7 @@
 
     .boubleWrapper {
    
-        z-index: -5;
+        z-index: 0;
         grid-column: 1/3;
         grid-row: 4/4;
         margin-bottom: 50px;

@@ -82,7 +82,7 @@ function PopUp(props) {
     if(props.isGrooming) {
         i_g = <>              
             <div ref={div => img_g1 = div}>
-                <Boubles flatImg={i_c1}
+                <Boubles idx={3}
                 bouble1c="#4B738B"
                 bouble2c="#88ACBC"
                 boubleSVG={sleepingSVG}
@@ -99,7 +99,7 @@ function PopUp(props) {
             </div>
 
             <div ref={div => img_g2 = div}>
-                <Boubles flatImg={i_g2}
+                <Boubles idx={4}
                 bouble1c="#4B738B"
                 bouble2c="#88ACBC"
                 boubleSVG={houseSVG}
@@ -119,7 +119,7 @@ function PopUp(props) {
     }else {
         i_g = <>
            <div ref={div => img_g1 = div}>
-                <Boubles flatImg={i_c1_pen}
+                <Boubles idx={5}
                 bouble1c="#F29F8D"
                 bouble2c="#F27D72"
                 boubleSVG={penSVG}
@@ -136,7 +136,7 @@ function PopUp(props) {
             </div>
 
             <div ref={div => img_g2 = div}>
-                <Boubles flatImg={i_g2_grad_sleeping}
+                <Boubles idx={6}
                 bouble1c="#F29F8D"
                 bouble2c="#F27D72"
                 boubleSVG={gradSleepingSVG}

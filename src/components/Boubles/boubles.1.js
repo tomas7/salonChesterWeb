@@ -5,8 +5,6 @@ import groomingImg from '../../images/graphics/GroomingM.png'
 import coursesImg from '../../images/graphics/CourseM.png'
 import getRandom from '../../Utils/RandomizeBetween'
 
-import SvgImg from '../../HOC/PopUp/svgImg'
-
 function Boubles(props) {
     const [anim, Setanim] = useState(false);
 
@@ -37,20 +35,18 @@ function Boubles(props) {
                 .to(imgMain, AnimDur, {scale: 1, ease: Power1.easeInOut,   })
                
                  svg1_anim.current = new TimelineMax({ pause: false, repeat:-1, yoyo:true,  })
-                 .set(svg1, {css: {scale: 2.2}})
-                .to(svg1, AnimDur, { autoAlpha: .5, scale: 2.2,ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {autoAlpha: .4, scale:  2.225, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {autoAlpha: .3, scale:  2.25, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {autoAlpha: .4, scale: 2.225, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, { autoAlpha: .5, scale: 2.2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, { autoAlpha: .5, scale: 1.2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {autoAlpha: .4, scale:  1.225, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {autoAlpha: .3, scale:  1.25, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {autoAlpha: .4, scale: 1.225, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, { autoAlpha: .5, scale: 1.2,ease: Power1.easeInOut,  yoyo:true }, )
                 .play(2)
                 svg2_anim.current = new TimelineMax({ pause: false, repeat:-1, yoyo:true })
-                .set(svg2, {css: {scale: 2.0}})
-                .to(svg2, AnimDur, { autoAlpha: .3,scale: 2.0,ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {autoAlpha: .4,scale: 1.975, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {autoAlpha: .5,scale: 1.95, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {autoAlpha: .2,scale: 1.975, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, { autoAlpha: .3,scale: 2.0,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, { autoAlpha: .3,scale: 1.0,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {autoAlpha: .4,scale: 0.975, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {autoAlpha: .5,scale: 0.95, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {autoAlpha: .2,scale: 0.975, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, { autoAlpha: .3,scale: 1.0,ease: Power1.easeInOut,  yoyo:true }, )
                 .play(3)
             }else if (props.isContact) {
                 mainImg_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
@@ -86,21 +82,20 @@ function Boubles(props) {
                 .to(imgMain, AnimDur, {scale:1. ,ease: Power1.easeInOut,  yoyo:true })
                 .play()
                 svg1_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true,  })
-                .set(svg1, {css: {scale: 2.0}})
-                .to(svg1, AnimDur, {scale:2.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:2.025 ,autoAlpha: .3,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:2.05 ,autoAlpha: .4,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:2.025 ,autoAlpha: .5,  ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg1, AnimDur, {scale:2.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.025 ,autoAlpha: .3,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.05 ,autoAlpha: .4,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.025 ,autoAlpha: .5,  ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg1, AnimDur, {scale:1.0 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
                 .play(1)
                 svg2_anim.current = new TimelineMax({ pause: true, repeat:-1, yoyo:true })
-                .set(svg2, {css: {scale: 2.24}})
+                .set(svg2, {css: {scale: 1.4}})
               
-                .to(svg2, AnimDur, {scale:2.24 ,autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:2.225 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:2.25 ,autoAlpha: .3, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:2.225 ,autoAlpha: .1, ease: Power1.easeInOut,  yoyo:true }, )
-                .to(svg2, AnimDur, {scale:2.2 , autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.24 ,autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.225 ,autoAlpha: .4, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.25 ,autoAlpha: .3, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.225 ,autoAlpha: .1, ease: Power1.easeInOut,  yoyo:true }, )
+                .to(svg2, AnimDur, {scale:1.2 , autoAlpha: .2,ease: Power1.easeInOut,  yoyo:true }, )
                 .play(2)
             }
         }
@@ -138,22 +133,19 @@ function Boubles(props) {
         Setanim(false)
     }
 
-    console.log(props)
+
     let randomNScale = getRandom(0.97, 1.03)
 
     return (
         <>
-            <div className={!props.isPopUp ? `${myClass.mainImg}`: `${myClass.mainImg} ${myClass.posAbs}` } 
+            <img className={myClass.mainImg} 
                 style={{  maxWidth: props.maxWidth,
                     maxHeight: props.maxHeight   }}
                 onMouseEnter={()=> 
-                onHover(imgMain)} onMouseLeave={()=> 
-                ofHover(imgMain)} ref={div => imgMain = div} 
+                onHover(svg1)} onMouseLeave={()=> 
+                ofHover(svg1)} src={props.flatImg} ref={img => imgMain = img} alt="Blank"
                 onClick={props.openModal}
-                >
-                <SvgImg idx={props.idx}/>
-                </div>
-
+                />
                 
 
             {/* <svg style={{transform: `scale(${props.scale + .6})`,  */}

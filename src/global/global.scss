@@ -4,12 +4,21 @@
 
 $interestingColor: #F5F5DC;
 
+@font-face {
+    font-family: $mainFont4;
+    font-display: swap;
+  }
+
 /* Global styles */
 html, body {
     padding: 0;
     margin: 0;
     background-color: #FBFBFB;
- 
+    
+}
+
+* {
+    color:black;
 }
 
 $colorMainBlue: #4B738B;
@@ -38,6 +47,9 @@ a {
 
 .tl-wrapper{
     overflow: hidden;
+    background-color: #FBFBFB;
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Semantic ui styles */
@@ -56,9 +68,25 @@ svg:not(:root) {
     overflow:visible!important;
 }
 
+/* Gallery */
+
+.galleryWrappe {
+    min-height: 100vh;
+
+    position: relative;
+    top: 100px;
+
+    > div {
+       position: relative;
+        padding-bottom: 600px;
+
+    }
+}
+
 
 /* Glboal fonts */
 h1 {
+    
     font-family: $mainFont4;
     font-size: 3rem; 
         @include for-big-desktop-up {    
@@ -67,6 +95,7 @@ h1 {
 }
 
 p {
+    
     font-family: $sideFont4;
     font-size: 1rem; 
     
@@ -76,6 +105,7 @@ p {
 }
 
 button {
+    
     font-family: $sideFont4;
     font-weight: 700;
     letter-spacing: .5px;
@@ -83,6 +113,7 @@ button {
 
 
 .captionStyle {
+    
     font-style: italic;
     color: black;
     text-decoration: underline;

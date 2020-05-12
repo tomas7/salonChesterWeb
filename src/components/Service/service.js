@@ -15,14 +15,19 @@ import { TimelineLite, Power1, Power4, TweenLite, TimelineMax, CustomWiggle, Cus
 
 import getRandom from '../../Utils/RandomizeBetween'
 
-import iconItem1 from '../../images/Icons/i_1.png'
-import iconItem2 from '../../images/Icons/i_2.png'
-import iconItem3 from '../../images/Icons/i_3.png'
-import iconItem4 from '../../images/Icons/i_4.png'
-import iconItem5 from '../../images/Icons/i_5.png'
-import iconItem6 from '../../images/Icons/i.png'
-import items from '../../images/Icons/items.png'
+// import iconItem1 from '../../images/Icons/i_1.png'
+// import iconItem2 from '../../images/Icons/i_2.png'
+// import iconItem3 from '../../images/Icons/i_3.png'
+// import iconItem4 from '../../images/Icons/i_4.png'
+// import iconItem5 from '../../images/Icons/i_5.png'
+// import iconItem6 from '../../images/Icons/i.png'
+// import items from '../../images/Icons/items.png'
 import PopUp from '../../HOC/PopUp/popUp'
+
+import svgImg from '../../HOC/PopUp/svgImg'
+
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
@@ -35,6 +40,64 @@ import Boubles from '../../components/Boubles/boubles'
 
 
 function Service(props) {
+
+
+    const query = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "Icons/serviceIcons/cuttingI.png" }) {
+          childImageSharp {
+            fixed(height: 70, ) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+  
+        placeholderImage1: file(relativePath: { eq: "Icons/serviceIcons/earsI.png" }) {
+          childImageSharp {
+            fixed(height: 70, ) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+  
+        placeholderImage2: file(relativePath: { eq: "Icons/serviceIcons/groomingI.png" }) {
+          childImageSharp {
+            fixed(height: 70, ) {
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            }
+          }
+        }
+        placeholderImage3: file(relativePath: { eq: "Icons/serviceIcons/itemsI.png" }) {
+            childImageSharp {
+              fixed(height: 70, ) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+          placeholderImage4: file(relativePath: { eq: "Icons/serviceIcons/nailsI.png" }) {
+            childImageSharp {
+              fixed(height: 70, ) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+          placeholderImage5: file(relativePath: { eq: "Icons/serviceIcons/showerI.png" }) {
+            childImageSharp {
+              fixed(height: 70, ) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+          placeholderImage6: file(relativePath: { eq: "Icons/serviceIcons/trimmingI.png" }) {
+            childImageSharp {
+              fixed(height: 70, ) {
+                ...GatsbyImageSharpFixed_withWebp_tracedSVG
+              }
+            }
+          }
+    }
+  `)
+console.log(query)
     const [modal, Setmodal] = useState(false);
 
     useEffect(() => {
@@ -67,31 +130,32 @@ function Service(props) {
             <h2>Our services:</h2>
             <div >
                 <span>
-                    <img src={iconItem2} alt="Blank"/>
+                  
+                    <Img alt="Blank" fixed={query.placeholderImage.childImageSharp.fixed} />
                     <p>Grooming</p>
                 </span>
                 <span>
-                    <img src={iconItem5} alt="Blank"/>
+                    <Img alt="Blank" fixed={query.placeholderImage1.childImageSharp.fixed} />
                     <p>Cutting</p>
                 </span>
                 <span>
-                    <img src={iconItem3} alt="Blank"/>
+                <Img alt="Blank" fixed={query.placeholderImage2.childImageSharp.fixed} />
                     <p>Nail Clipping</p>
                 </span>
                 <span>
-                    <img src={iconItem4} alt="Blank"/>
+                <Img alt="Blank" fixed={query.placeholderImage3.childImageSharp.fixed} />
                     <p>Trimming</p>
                 </span>
                 <span>
-                    <img src={iconItem6} alt="Blank"/>
+                <Img alt="Blank" fixed={query.placeholderImage4.childImageSharp.fixed} />
                     <p>Ear Cleaning</p>
                 </span>
                 <span>
-                    <img src={iconItem1} alt="Blank"/>
+                <Img alt="Blank" fixed={query.placeholderImage5.childImageSharp.fixed} />
                     <p>Bath</p>
                 </span>
                 <span>
-                    <img src={items} alt="Blank"/>
+                <Img alt="Blank" fixed={query.placeholderImage6.childImageSharp.fixed} />
                     <p>Accessories</p>
                 </span>
             </div>
@@ -144,7 +208,7 @@ function Service(props) {
          
             </ContentWrapper>
             <div className={props.isGrooming ? `${myClass.alignRight}` : `${myClass.alignRight} ${myClass.large}`}>
-              <Boubles flatImg={props.flatImg}
+              <Boubles idx={props.pageIndx}
               bouble1c={props.bouble1c}
               bouble2c={props.bouble2c}
               boubleSVG={props.boubleSVG}

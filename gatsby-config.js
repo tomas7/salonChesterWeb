@@ -3,13 +3,40 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    social: [
+      {
+        name: "Source",
+        url: "https://github.com/epilande/gatsby-theme-gallery",
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/_epilande",
+      },
+      {
+        name: "GitHub",
+        url: "https://github.com/epilande",
+      },
+    ],
   },
   plugins: [
-    
+ 
+     `gatsby-theme-gallery`,
+     "gatsby-plugin-typescript",
+     "gatsby-plugin-emotion",
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-performance-metrics`,
+      options: {
+        firstPaint: false,
+        firstContentfulPaint: true,
+        firstInputDelay: true,
+        useLogging: true,
+        useGoogleAnalytics: false
+      }
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

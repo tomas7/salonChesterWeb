@@ -2,7 +2,7 @@
 @import '../../../global/mixins.scss';
 
 nav {
-    z-index: 999;
+    z-index: 11;
     width: 100%;
     background-color: rgba($colorMainBlue, .6);
     position: fixed;
@@ -29,7 +29,7 @@ z-index: 11;
     background-color: rgba($colorMainBlue, .8);
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;

@@ -3,6 +3,8 @@ import myClass from './PopUpContent.module.scss'
 import moment from 'moment';
 import { isSameDay, startOfToday ,startOfTomorrow, endOfDay, getDaysInMonth } from 'date-fns'
 import {subDays} from 'date-fns'
+import setHours from "date-fns/setMinutes";
+import setMinutes from "date-fns/setMinutes";
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker-cssmodules.min.css"
 import { getMinutes } from 'date-fns/esm';
@@ -69,8 +71,8 @@ function PopUpContent_Cal(props) {
     //how many days left in a month
     let daysLeftInMonth = daysInMonth - curDayNum;
 
-    const dates = [new Date("April 9, 2020 15:00:00"),new Date("April 9, 2020 11:00:00")]
-    const dates2 = [new Date("April 10, 2020 11:00:00"),new Date("April 10, 2020 13:00:00")]
+    const dates = [new Date("May 9, 2020 15:00:00"),new Date("May 9, 2020 11:00:00")]
+    const dates2 = [new Date("May 12, 2020 11:00:00"),new Date("May 12, 2020 13:00:00")]
 
     let specificDateArr
 
@@ -107,7 +109,7 @@ let myFun =()=> {
                     disablePast
             
                     minDate={startOfTomorrow()}
-                    excludeDates={[new Date(), subDays(new Date(), 1)]}
+                    excludeDates={[new Date(), subDays(new Date(), -3)]}
                     showTimeSelect
                     excludeTimes={dates2}
 
@@ -117,8 +119,8 @@ let myFun =()=> {
             </div>
          
             <div>
-                <h3>Starting date:</h3>
-                <DatePicker
+                <h3>Ending date:</h3>
+                {/* <DatePicker
                     selected={endDate}
                     onChange={date => setEndDate(date)}
                     selectsEnd
@@ -135,7 +137,7 @@ let myFun =()=> {
                     excludeDates={[new Date(), subDays(new Date(), 1)]}
                     dateFormat="MMMM d, yyyy h:mm aa"
                     
-                />
+                /> */}
             </div>
           
             </div>
